@@ -8,7 +8,7 @@ function RootLayout() {
     <>
       <div className="min-h-screen flex flex-col">
         <Header />
-        <div className="flex-1  bg-gradient-to-b dark:from-gray-700 dark:to-gray-800 dark:bg-gray-900 ">
+        <div className="flex-1  bg-gradient-to-b from-[#F8F9FA] to-[#B0BEC5] dark:from-gray-700 dark:to-gray-800 dark:bg-gray-900 ">
           <Outlet />
         </div>
         <Footer />

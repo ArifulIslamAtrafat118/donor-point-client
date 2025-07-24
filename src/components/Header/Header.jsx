@@ -53,11 +53,11 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-gradient-to-br from-[#155e75]  to-[#0D9488]  dark:from-white/10 dark:to-[#155e75] shadow-md sticky top-0 z-50 pt-2">
+    <header className="bg-gradient-to-br from-[#2196F3]  to-[#0D9488]  dark:from-white/10 dark:to-[#155e75] shadow-md sticky top-0 z-50 pt-2">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         <Link
           to="/"
-          className="text-xl xl:text-3xl font-bold text-[rgb(62,176,147)] dark:text-[#14B8A6]"
+          className="text-xl xl:text-3xl font-bold text-[#E53935]"
         >
           <span>DonorPoint</span>
         </Link>
@@ -66,7 +66,7 @@ const Header = () => {
         <nav className="hidden md:flex items-center gap-5 text-sm font-medium text-black dark:text-white">
           {navItems.map(
             ({ name, path, private: isPrivate }) =>
-              (!isPrivate || currentUser) && (
+              (!isPrivate ||  currentUser)&&(name!=="dashboard") && (
                 <NavLink
                   to={path}
                   key={path}
