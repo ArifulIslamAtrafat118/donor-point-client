@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import LocationSelector from "../../utils/LocationSelector";
 import useSearchDonor from "../../api/useSearchDonor";
 import { errorToast } from "../../utils/errorToast";
-import { FaList, FaTh } from "react-icons/fa";
+import ShowSearchResult from "./ShowSearchResult";
 
 function SearchPage() {
   const [donors, setDonors] = useState([]);
@@ -27,7 +27,7 @@ function SearchPage() {
     setSectionOff(false);
     try {
       const donors = await searchDonor(formData);
-      console.log(donors);
+      // console.log(donors);
       setDonors(donors);
     } catch (error) {
       console.log(error);
@@ -45,7 +45,7 @@ function SearchPage() {
         exit={{ opacity: 0 }}
         className="py-8 lg:py-12 flex items-center justify-center bg-stone-200 dark:bg-gray-900 px-4"
       >
-        <div className=" bg-red-300/10  p-8 md:mx-10 rounded-lg shadow-lg max-w-6xl w-full relative overflow-hidden">
+        <div className=" bg-red-300/10  p-8 md:mx-10 rounded-lg shadow-lg max-w-6xl w-full relative overflow-hidden hover:shadow-2xl transform hover:scale-101 transition duration-300">
           <div className="absolute -top-24 -right-20 opacity-10 pointer-events-none w-[300px]"></div>
           <h2 className="text-2xl lg:text-4xl font-semibold text-center mb-6 text-gray-800 dark:text-white">
             Search Donor
@@ -94,7 +94,7 @@ function SearchPage() {
       ) :sectionOff ? (
         <p></p>
       ) : donors.length > 0 ? (
-        <div className="text-red-600 text-center text-4xl">Will show search data here</div>
+        <ShowSearchResult donors={donors}/>
       ) : (
         <div className="h-17 lg:h-25 flex items-center justify-center dark:bg-gray-900">
           <p className=" text-center text-xl  lg:text-2xl xl:text-3xl text-gray-500 dark:text-gray-400">
