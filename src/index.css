@@ -1,3 +1,8 @@
 @import "tailwindcss";
 @plugin "daisyui";
 @custom-variant dark (&:where(.dark, .dark *));
+
+
+.input {
+  @apply w-full px-4 py-2 rounded-md border border-[#CFD8DC] dark:border-[#37474F] bg-[#ECEFF1] dark:bg-[#263238] text-[#212121] dark:text-[#ECEFF1] placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-red-300 dark:focus:ring-[#FF1744] transition duration-300;
+}

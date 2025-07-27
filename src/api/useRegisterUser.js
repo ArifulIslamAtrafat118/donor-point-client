@@ -16,9 +16,9 @@ const useRegisterUser = () => {
       avatar: userData.avatar,
       bloodGroup: userData.bloodGroup,
       location: {
-        division: { ...userData.location.division, type: "division" },
-        district: { ...userData.location.district, type: "district" },
-        upazila: { ...userData.location.upazila, type: "upazila" },
+        division: userData.location.division,
+        district: userData.location.district,
+        upazila: userData.location.upazila,
       },
     };
 

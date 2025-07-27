@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home";
 import ErrorPage from "../components/ErrorPage";
 import SignIn from "../pages/Auth/SignIn";
 import SignUp from "../pages/Auth/SignUp";
+import SearchPage from "../pages/SearchPage/SearchPage";
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
         path: "/sign-in",
         Component: SignIn,
       },
+      {
+        path: "/search",
+        Component: SearchPage,
+      }
     ],
   },
 ]);
