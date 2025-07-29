@@ -1,16 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useAuth } from "../../context/AuthContext";
-import useRoleBasedLinks from "../../hooks/useRoleBasedLinks";
 
-const WelcomeBanner = () => {
-  const { currentUser } = useAuth();
-  const displayName = currentUser?.displayName || "Donor";
- const { userRole } = useRoleBasedLinks();
-
+const WelcomeBanner = ({ role, displayName }) => {
   return (
     <section className="relative bg-gradient-to-r from-[#FF1744]/10 via-white/40 to-white dark:from-[#1c1c1c] dark:via-gray-900 dark:to-gray-900 rounded-lg overflow-hidden p-6 md:p-10 mb-8 shadow-md">
-      
       <svg
         className="absolute right-0 top-0 w-32 md:w-64 lg:w-80 opacity-10 pointer-events-none"
         viewBox="0 0 200 200"
@@ -34,12 +27,13 @@ const WelcomeBanner = () => {
           Welcome back, <span className="text-[#FF1744]">{displayName}</span> 👋🏼
         </h1>
         <p className="mt-2 text-sm md:text-base text-gray-600 dark:text-gray-300">
-          You're logged in as a <strong>{userRole}</strong>. Glad to have you here.
+          You're logged in as a <strong>{role}</strong>. Glad to have you here.
         </p>
 
-        {userRole === "donor" && (
+        {role === "donor" && (
           <p className="mt-4 text-sm italic text-[#b91c1c] dark:text-red-300">
-            ❤️ Your donation could be someone’s second chance at life. Thank you for being a real-life hero.
+            ❤️ Your donation could be someone’s second chance at life. Thank you
+            for being a real-life hero.
           </p>
         )}
       </motion.div>
