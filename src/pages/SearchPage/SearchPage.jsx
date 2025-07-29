@@ -22,6 +22,7 @@ function SearchPage() {
     }));
   };
   const handleSearch = async (e) => {
+    setDonors([]);
     e.preventDefault();
     setLoading(true);
     setSectionOff(false);
