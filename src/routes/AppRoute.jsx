@@ -7,11 +7,13 @@ import SignUp from "../pages/Auth/SignUp";
 import SearchPage from "../pages/SearchPage/SearchPage";
 import BlogPage from "../pages/blogPage/BlogPage";
 import CreateDonationRequest from "../pages/CreateUpdateDonationRequestPage/CreateDonationRequest";
-import PrivateRoute from "./PrivateRoute";
+import PrivateRoute from "../components/guards/PrivateRoute";
 import DashboardLayout from "../pages/dashboard/DashboardLayout";
 import DashboardHome from "../pages/dashboard/DashboardHome";
 import Profile from "../pages/dashboard/Profile";
 import AllUsers from "../pages/dashboard/allUsers";
+import Unauthorized from "../pages/Unauthorized";
+import AdminRoute from "../components/guards/AdminRoute";
 
 export const router = createBrowserRouter([
   {
@@ -67,7 +69,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "all-users",
-        element: <AllUsers />,
+        element: (
+          <AdminRoute>
+            <AllUsers />
+          </AdminRoute>
+        ),
       },
       {
         path: "all-blood-donation-request",
@@ -81,7 +87,10 @@ export const router = createBrowserRouter([
         path: "funding",
         element: <p>funding</p>,
       },
-      
     ],
+  },
+  {
+    path: "/unauthorized",
+    element: <Unauthorized />,
   },
 ]);
