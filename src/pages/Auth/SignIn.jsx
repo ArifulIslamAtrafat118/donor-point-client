@@ -17,7 +17,7 @@ const SignIn = () => {
     location.state?.pathname && typeof location.state.pathname === "string"
       ? location.state.pathname
       : "/";
-  console.log(from);
+  // console.log(from);
   const navigateNow = () => {
     navigate(from, { replace: true });
   };
@@ -52,28 +52,28 @@ const SignIn = () => {
       });
   };
 
-  const handleGoogleSignIn = async () => {
-    try {
-      await googleSignIn();
-      toast.success("Wellcome to Bondhon Events!", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
-      navigateNow();
-    } catch (error) {
-      errorToast(error);
-    }
-  };
+  // const handleGoogleSignIn = async () => {
+  //   try {
+  //     await googleSignIn();
+  //     toast.success("Wellcome to Bondhon Events!", {
+  //       position: "top-center",
+  //       autoClose: 5000,
+  //       hideProgressBar: false,
+  //       closeOnClick: false,
+  //       pauseOnHover: true,
+  //       draggable: true,
+  //       progress: undefined,
+  //       theme: "colored",
+  //     });
+  //     navigateNow();
+  //   } catch (error) {
+  //     errorToast(error);
+  //   }
+  // };
 
   return (
     <div
-      className="relative min-h-screen  flex items-center justify-center bg-green-50 dark:bg-gray-900 px-4 overflow-hidden"
+      className="relative min-h-[60vh]  flex items-center justify-center  px-4 overflow-hidden"
     >
       <div className="relative z-10 bg-gray-100 dark:bg-gray-800 p-8 rounded-lg shadow-lg max-w-md w-full">
         <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800 dark:text-white">
@@ -103,12 +103,12 @@ const SignIn = () => {
             Sign In
           </button>
         </form>
-        <button
+        {/* <button
           onClick={handleGoogleSignIn}
           className="w-full bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-white py-2 rounded mt-3 cursor-pointer"
         >
           Sign in with Google
-        </button>
+        </button> */}
         <p className="text-sm mt-4 text-center text-gray-700 dark:text-gray-300">
           Don’t have an account?{" "}
           <Link

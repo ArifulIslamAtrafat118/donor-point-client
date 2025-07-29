@@ -97,7 +97,7 @@ const SignUp = () => {
       <div className=" bg-red-300/10  p-8 rounded-lg shadow-lg max-w-3xl w-full relative overflow-hidden">
         <div className="absolute -top-24 -right-20 opacity-10 pointer-events-none w-[300px]"></div>
         <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800 dark:text-white">
-          Create Account
+          Register
         </h2>
         <form
           onSubmit={(event) => handleRegister(event)}
