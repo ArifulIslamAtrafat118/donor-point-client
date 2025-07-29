@@ -22,8 +22,9 @@ function LocationSelector({ onLocationChange }) {
       const filteredDistrict = allDistricts.filter((d) => {
         return d.division_id === selectedDivision?.id;
       });
-      console.log(filteredDistrict);
+    //   console.log(filteredDistrict);
       setDistricts(filteredDistrict);
+      setUpazilas([]);
       setSelectedDistrict("");
       setSElectedUpazila("");
     }
@@ -43,9 +44,9 @@ function LocationSelector({ onLocationChange }) {
   useEffect(() => {
     if (selectedDivision && selectedDistric && selectedUpazila) {
       onLocationChange({
-        division: selectedDivision,
-        district: selectedDistric,
-        upazila: selectedUpazila,
+        division: selectedDivision.id,
+        district: selectedDistric.id,
+        upazila: selectedUpazila.id,
       });
     }
   }, [selectedDivision, selectedDistric, selectedUpazila]);
@@ -66,7 +67,7 @@ function LocationSelector({ onLocationChange }) {
             setSelectedDivision(div);
           }}
           required
-          className="input "
+          className="input cursor-pointer"
         >
           <option disabled value="">
             --Division--
@@ -80,7 +81,7 @@ function LocationSelector({ onLocationChange }) {
         <select
           name="district"
           value={selectedDistric?.id || ""}
-          className="input"
+          className="input cursor-pointer"
           onChange={(e) => {
             const dist = districts.find((d) => d.id === e.target.value);
             setSelectedDistrict(dist);
@@ -101,7 +102,7 @@ function LocationSelector({ onLocationChange }) {
         name="upazila"
         value={selectedUpazila?.id || ""}
         id=""
-        className="input"
+        className="input cursor-pointer"
         onChange={(e) => {
           const upz = upazilas.find((u) => u.id === e.target.value);
           setSElectedUpazila(upz);

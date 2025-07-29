@@ -18,12 +18,17 @@ export const AuthProvider = ({ children }) => {
   const providerGoogle = new GoogleAuthProvider();
   // Monitor auth state
   useEffect(() => {
+    let isMounted = true;
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user);
-      setLoading(false);
+      if (isMounted) {
+        setCurrentUser(user);
+        setLoading(false);
+      }
     });
-
-    return unsubscribe;
+    return () => {
+      isMounted = false;
+      unsubscribe();
+    };
   }, []);
 
   // Auth actions
@@ -46,6 +51,7 @@ export const AuthProvider = ({ children }) => {
 
   const value = {
     currentUser,
+    setCurrentUser,
     login,
     signup,
     googleSignIn,

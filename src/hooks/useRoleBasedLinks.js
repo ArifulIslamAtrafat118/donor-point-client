@@ -4,13 +4,12 @@ import { HiChevronRight } from "react-icons/hi";
 import { MdSpaceDashboard, MdRequestPage } from "react-icons/md";
 import { IoIosCreate } from "react-icons/io";
 import { FaUsers } from "react-icons/fa6";
-import { FaDonate } from "react-icons/fa";
+import { FaDonate, FaHandHoldingHeart } from "react-icons/fa";
 import useUserData from "../api/useUserData";
 
 function useRoleBasedLinks() {
   const { currentUser } = useAuth();
   const { userData } = useUserData();
-  //   const userRole = "admin";
   const userRole = userData?.role || "donor";
 
   const donorLinks = [
@@ -40,7 +39,7 @@ function useRoleBasedLinks() {
       to: "/dashboard/content-management",
       icon: HiChevronRight,
     },
-    { name: "Funding", to: "/dashboard/funding", icon: FaDonate },
+    { name: "Funding", to: "/dashboard/funding", icon: FaHandHoldingHeart },
   ];
 
   const volunteerLinks = [
@@ -55,7 +54,7 @@ function useRoleBasedLinks() {
       to: "/dashboard/content-management",
       icon: HiChevronRight,
     },
-    { name: "Funding", to: "/dashboard/funding", icon: FaDonate },
+    { name: "Funding", to: "/dashboard/funding", icon: FaHandHoldingHeart },
   ];
 
   const roleLinks = {

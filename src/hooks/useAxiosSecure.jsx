@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:3000/api",
+  baseURL: "https://donor-point.vercel.app/api",
+  // baseURL: "http://localhost:3000/api",
 });
 
 const useAxiosSecure = () => {
