@@ -8,9 +8,9 @@ function AllUsers() {
   const [filter, setFilter] = useState("All");
 
   const filteredUser =
-    filter === "All"
-      ? allUser
-      : allUser.filter((user) => user.stauts === filter);
+  filter === "All"
+    ? allUser
+    : allUser.filter((user) => user.status?.toLowerCase() === filter.toLowerCase());
   useEffect(() => {
     const run = async () => {
       setAllUser(await getAllUserData());
@@ -68,8 +68,8 @@ function AllUsers() {
                     <td className="px-4 py-2">{user.role}</td>
                     <td className="px-4 py-2">{user.status}</td>
                     <td className="px-4 py-2">
-                      <span className="text-green-600 hover:text-green-800 font-extrabold text-xl">
-                        ...
+                      <span className="text-green-600 hover:text-green-800 font-extrabold text-xl text-center">
+                           ...
                       </span>
                     </td>
                   </tr>

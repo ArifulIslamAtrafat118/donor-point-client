@@ -4,7 +4,7 @@ import WelcomeBanner from "./WelcomeBanner";
 import useRoleBasedLinks from "../../hooks/useRoleBasedLinks";
 import AdminStatsCards from "./AdminStatsCards";
 import useUserData from "../../api/useUserData";
-import WelcomeSectionSkeleton from "./WelcomeBannerSkeleton";
+import WelcomeSectionSkeleton from "./WelcomeSectionSkeleton";
 
 function DashboardHome() {
   const { currentUser } = useAuth();
