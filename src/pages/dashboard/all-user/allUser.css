@@ -1,0 +1,13 @@
+.btn-filter {
+    background: linear-gradient(136.85deg, #ff37f2 -15.82%, #405aff 99.57%);
+    border-radius: 25px;
+    color: #fff !important;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 12px 36px;
+    border: none;
+}
