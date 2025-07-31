@@ -20,6 +20,11 @@ const useDonationRequests = () => {
     return res.data; 
   };
 
+  const getRecentRequestByUser = async(uid)=>{
+   const res = await axios.get(`/requests/user/${uid}/recent`);
+   return res.data;
+  }
+
   const getDonationRequestById = async (id) => {
     const res = await axios.get(`/donation-request/${id}`);
     return res.data; 
@@ -29,6 +34,7 @@ const useDonationRequests = () => {
     getAllDonationRequests,
     getPendingDonationRequests,
     getDonationRequestsByUser,
+    getRecentRequestByUser,
     getDonationRequestById,
   };
 };

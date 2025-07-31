@@ -9,7 +9,10 @@ function useUserData() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!currentUser?.uid) return;
+    if (!currentUser?.uid) {
+      setLoading(false);
+      return;
+    }
 
     const fetchUserData = async () => {
       try {

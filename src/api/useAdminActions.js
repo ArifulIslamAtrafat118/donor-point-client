@@ -12,6 +12,10 @@ const useAdminActions = () => {
     const res = await axios.patch(`/admin/${uid}/promote-admin`);
     return res.data;
   };
+  const revertToDonor = async (uid) => {
+    const res = await axios.patch(`/admin/${uid}/revert-to-donor`);
+    return res.data;
+  };
 
   const activateUser = async (uid) => {
     const res = await axios.patch(`/admin/${uid}/activate`);
@@ -26,6 +30,7 @@ const useAdminActions = () => {
   return {
     promoteToVolunteer,
     promoteToAdmin,
+    revertToDonor,
     activateUser,
     blockUser,
   };
