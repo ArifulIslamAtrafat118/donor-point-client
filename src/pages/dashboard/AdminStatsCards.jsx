@@ -3,8 +3,8 @@ import { FaUsers, FaHandHoldingHeart, FaTint } from "react-icons/fa";
 import useAdminStats from "../../api/useAdminStats";
 
 function AdminStatsCards() {
-  const { stats } = useAdminStats();
-  return (
+  const { stats, loading } = useAdminStats();
+   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {/* Total Donors */}
       <div className="flex items-center gap-4 bg-gradient-to-br from-[#ffe2e6] to-[#ff1744]/40 dark:from-[#4b1c1c] dark:to-[#991b1b] p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
@@ -13,7 +13,7 @@ function AdminStatsCards() {
         </div>
         <div>
           <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
-            {stats.totalDonors}
+            {!loading && stats?.totalDonors}
           </h2>
           <p className="text-sm text-gray-700 dark:text-gray-300">
             Total Donors
@@ -28,7 +28,7 @@ function AdminStatsCards() {
         </div>
         <div>
           <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
-            ৳{stats.totalFunding}
+            ৳{!loading && stats?.totalFunding}
           </h2>
           <p className="text-sm text-gray-700 dark:text-gray-300">
             Total Funds Raised
@@ -43,7 +43,7 @@ function AdminStatsCards() {
         </div>
         <div>
           <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
-            {stats.totalRequests}
+            {!loading && stats?.totalRequests}
           </h2>
           <p className="text-sm text-gray-700 dark:text-gray-300">
             Blood Requests

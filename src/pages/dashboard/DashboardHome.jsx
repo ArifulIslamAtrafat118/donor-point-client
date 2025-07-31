@@ -5,6 +5,7 @@ import useRoleBasedLinks from "../../hooks/useRoleBasedLinks";
 import AdminStatsCards from "./AdminStatsCards";
 import useUserData from "../../api/useUserData";
 import WelcomeSectionSkeleton from "./WelcomeSectionSkeleton";
+import RecentDonationReq from "./RecentDonationReq";
 
 function DashboardHome() {
   const { currentUser } = useAuth();
@@ -12,13 +13,15 @@ function DashboardHome() {
   const role = userData?.role;
 
   return (
-    <section className=" bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+    <section className=" bg-gray-100 dark:bg-[#0d0e1f] text-gray-800 dark:text-gray-100">
       {/* Welcome Message Banner */}
       {loading ? (
         <WelcomeSectionSkeleton />
       ) : (
-        <WelcomeBanner role={role} displayName={userData.name} />
+        <WelcomeBanner role={role} displayName={userData?.name} />
       )}
+      {/**Recent requests */}
+      {role === "donor" && <RecentDonationReq/>}
       {/* Stats  */}
       {role === "admin" && <AdminStatsCards />}
     </section>
