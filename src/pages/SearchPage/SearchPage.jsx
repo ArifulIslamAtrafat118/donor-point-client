@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import LocationSelector from "../../utils/LocationSelector";
 import useSearchDonor from "../../api/useSearchDonor";
-import { errorToast } from "../../utils/errorToast";
 import ShowSearchResult from "./ShowSearchResult";
+import { errorToast } from "../../utils/toast/errorToast";
 
 function SearchPage() {
   const [donors, setDonors] = useState([]);

@@ -2,7 +2,29 @@
 @plugin "daisyui";
 @custom-variant dark (&:where(.dark, .dark *));
 
+button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
+    cursor: pointer;
+}
+
+.pagination-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border: 1px solid rgba(238, 224, 255, .1019607843);
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.active {
+  background: linear-gradient(180deg, #e855de .81%, #6d0feb 110.93%, #5400ee 131.2%);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
 
 .input {
-  @apply w-full px-4 py-2 rounded-md border border-[#CFD8DC] dark:border-[#37474F] bg-[#ECEFF1] dark:bg-[#263238] text-[#212121] dark:text-[#ECEFF1] placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-red-300 dark:focus:ring-[#FF1744] transition duration-300;
+  @apply w-full px-4 py-2 rounded-md border border-[#CFD8DC] dark:border-[#37474F] bg-[#ECEFF1] dark:bg-[#263238] text-[#212121] dark:text-[#ECEFF1] placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-red-300 dark:focus:ring-white transition duration-300;
 }

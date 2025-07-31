@@ -11,9 +11,11 @@ import PrivateRoute from "../components/guards/PrivateRoute";
 import DashboardLayout from "../pages/dashboard/DashboardLayout";
 import DashboardHome from "../pages/dashboard/DashboardHome";
 import Profile from "../pages/dashboard/Profile";
-import AllUsers from "../pages/dashboard/allUsers";
+import AllUsers from "../pages/dashboard/all-user/AllUsers";
 import Unauthorized from "../pages/Unauthorized";
 import AdminRoute from "../components/guards/AdminRoute";
+import MyDonationRequests from "../pages/dashboard/MyDonationRequests";
+import AllDonationRequest from "../pages/dashboard/AllDonationRequest";
 
 export const router = createBrowserRouter([
   {
@@ -61,7 +63,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "my-donation-requests",
-        element: <p>my-donation-requests</p>,
+        element: <MyDonationRequests/>,
       },
       {
         path: "create-donation-request",
@@ -77,7 +79,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "all-blood-donation-request",
-        element: <p>all-blood-donation-request</p>,
+        element: <AllDonationRequest/>,
       },
       {
         path: "content-management",
